@@ -1,0 +1,25 @@
+<div class="modraHover row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary">{{ artistBasicView.artistGenre}}</strong>
+      <h3 class="mb-0"> {{ artistBasicView.artistName }}</h3>
+      <br>
+      <h4 class="mb-0">pocet albumov</h4>
+      <div class="mb-1 text-muted">pocet songov</div>
+      <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+    <!--  <a href="#" class="stretched-link">Continue reading</a> -->
+    </div>
+    <div class="col p-4 d-flex flex-column position-static" >
+        <h4 class="mb-0">pocet albumov</h4>
+        <h1  [countUp]="artistBasicView.numberOfAlbums" [reanimateOnClick]="false"   class="text-primary" >0</h1>
+        <br>
+        <h4 class="mb-0">pocet songov</h4>
+        <h1 [countUp]="artistBasicView.numberOfSongs" [reanimateOnClick]="false"   class="text-success" >0</h1>
+        <a  [routerLink]="['/editArtist', artistBasicView.artistId]"  class="btn  float-right"><strong id="deleteButton">Edit</strong></a>
+        <a  [routerLink]="" (click)="deleteArtist()" class="btn  float-right"><strong id="deleteButton">X</strong></a>
+    </div>
+
+    <div class="col-auto d-none d-lg-block">
+        <img  width="400" height="280" src="{{ artistBasicView.artistImage }}" alt="">
+        <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+    </div>
+  </div>

@@ -1,0 +1,59 @@
+
+   <!-- <h1 class="text-center" >Hudobna databaza</h1>
+    <nav class="nav nav-pills nav-fill">
+        <a class="nav-item nav-link" routerLink="/">Domov</a>
+        <a class="nav-item nav-link" routerLink="/artist" >Kapely</a>
+        <a class="nav-item nav-link" routerLink="/album" >Albumy</a>
+        <a class="nav-item nav-link" routerLink="/song" >Songy</a>
+      </nav>-->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MusicBase</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <app-menu-item   [nameOfItem]="namesOfMenuitem[0]"    [routeLink]="routes[0]" > </app-menu-item>
+            <!-- <app-menu-item   [nameOfItem]="namesOfMenuitem[1]"    [routeLink]="routes[1]" > </app-menu-item> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"    id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Umelci</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" routerLink="artist" >Prehlad</a>
+                <a class="dropdown-item" routerLink="addArtist" >Pridaj umelca</a>
+              </div>
+            </li>
+            <!-- <app-menu-item   [nameOfItem]="namesOfMenuitem[2]"    [routeLink]="routes[2]" > </app-menu-item>-->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"    id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Albumy</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" routerLink="album" >Prehlad</a>
+                <a class="dropdown-item" routerLink="addAlbum" >Pridaj album</a>
+              </div>
+            </li>
+           <!-- <app-menu-item   [nameOfItem]="namesOfMenuitem[3]"    [routeLink]="routes[3]" > </app-menu-item> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"    id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Songy</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" routerLink="song" >Prehlad</a>
+                <a class="dropdown-item" routerLink="addSong" >Pridaj song</a>
+              </div>
+            </li>
+              <!-- <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div> form-inline -->
+          </ul>
+          <ul class=" my-2 my-lg-0 navbar-nav  navbar-right ">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="login"  data-toggle="dropdown" >Prihlásenie<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="registration"  data-toggle="dropdown" >Registrácia<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <app-search-header-item></app-search-header-item>
+        </div>
+      </nav>

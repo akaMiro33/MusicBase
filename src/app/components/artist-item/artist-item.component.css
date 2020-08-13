@@ -1,0 +1,16 @@
+
+.modraHover:hover{
+    border-color: rgb(60, 225, 236)   !important;
+}
+
+#deleteButton {
+    color:black !important;
+}
+
+a {
+    text-align: right;   
+}
+
+strong {
+    font-size: 1.5em !important;
+}

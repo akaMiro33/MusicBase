@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+<form #addAlbumForm="ngForm"  (ngSubmit)="onSubmit()"  novalidate >
+    <div class="form-group">
+        <label>Umelec</label>
+        <select (blur)="checkSelectOption(artist.value)"  (change)="checkSelectOption(artist.value)" class="custom-select"  #artist="ngModel"
+        [class.is-invalid]="selectHasError && artist.touched" name="artist" [(ngModel)]="newAlbumUpdate.artistName" >
+            <option selected >-- vyber moznost --</option>
+            <option *ngFor="let artist of (artists$ | async)">{{ artist.name }}</option>
+        </select>
+        <small class="text-danger"  [class.d-none]="!selectHasError || artist.untouched" >Umelec je povinný</small>
+    </div>
+    <div class="form-group">
+        <label>Zaner</label>
+        <input type="text"  required #genre="ngModel" class="form-control"
+        [class.is-invalid]="genre.invalid && genre.touched" name="genre" [(ngModel)]="newAlbumUpdate.genre" >
+        <small class="text-danger"  [class.d-none]="genre.valid || genre.untouched" >Zaner je povinné</small>
+    </div>
+    <div class="form-group">
+        <label>Rok vydania</label>
+        <input type="text"  required #year="ngModel" class="form-control"
+        [class.is-invalid]="year.invalid && year.touched" name="year" [(ngModel)]="newAlbumUpdate.yearOfRelease" >
+        <small class="text-danger"  [class.d-none]="year.valid || year.untouched" >Rok vydania je povinný</small>
+    </div>
+    <div class="form-group">
+        <label>Nazov</label>
+        <input type="text"  required #name="ngModel" class="form-control"
+        [class.is-invalid]="name.invalid && name.touched" name="name" [(ngModel)]="newAlbumUpdate.name" >
+        <small class="text-danger"  [class.d-none]="name.valid || name.untouched" >Nazov je povinný</small>
+    </div>
+    <div class="form-group">
+      <label>Link k obrazku albumu</label>
+      <input type="text"  required #link="ngModel" class="form-control"
+      [class.is-invalid]="link.invalid && link.touched" name="link" [(ngModel)]="newAlbumUpdate.albumImage" >
+      <small class="text-danger"  [class.d-none]="link.valid || link.untouched" >Rok vydania je povinný</small>
+  </div>
+    <div class="text-center">
+        <button [disabled]="addAlbumForm.form.invalid" class="btn btn-primary" type="submit" >Pridaj</button>
+    </div>
+</form>
+</div>
+<div class="col-sm-3"></div>
+</div>

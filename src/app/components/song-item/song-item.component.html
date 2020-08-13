@@ -1,0 +1,20 @@
+<div class="modraHover row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <h3 class="mb-0">{{ songBasicView.SongName }}</h3>
+      <p class="mb-0">{{ songBasicView.SongGenre }}</p>
+    </div>
+    <div class=" col p-4 d-flex flex-column position-static">
+      <h4 class="d-inline-block mb-2 text-primary " >{{ songBasicView.SongLength }}</h4>
+    </div>
+     <div class="col p-4 d-flex flex-column position-static" >
+        <h4 class="mb-0">{{ songBasicView.AlbumName}}</h4>
+        <h4 class="mb-0">{{ songBasicView.ArtistName}}</h4>
+    </div>
+    <div class="col-1 p-4 d-flex flex-column position-static" >
+       <a [routerLink]="" (click)="deleteSong()" class="btn btn-danger btn-sm float-right rounded-circle"><strong id="deleteButton">X</strong>
+       </a>
+       <br>
+       <a [routerLink]="['/editSong',songBasicView.SongId]"  class="btn btn-primary btn-sm float-right rounded-circle"><strong id="deleteButton">Edit</strong>
+       </a>
+  </div>
+  </div>

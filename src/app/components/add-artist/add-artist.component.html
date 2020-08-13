@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+<form #addArtistForm="ngForm"  (ngSubmit)="onSubmit()"  novalidate >
+
+    <div class="form-group">
+        <label>Meno umelca</label>
+        <input type="text"  required #name="ngModel" class="form-control"
+        [class.is-invalid]="name.invalid && name.touched" name="name" [(ngModel)]="newArtist.name" >
+        <small class="text-danger"  [class.d-none]="name.valid || name.untouched" >Meno umelca je povinné</small>
+    </div>
+
+    <div class="form-group">
+        <label>Zaner</label>
+        <input type="text"  required #genre="ngModel" class="form-control"
+        [class.is-invalid]="genre.invalid && genre.touched" name="genre" [(ngModel)]="newArtist.genre" >
+        <small class="text-danger"  [class.d-none]="genre.valid || genre.untouched" >Zaner umelca je povinný</small>
+    </div>
+    <div class="form-group">
+        <label>Link z obrazku umelca</label>
+        <input type="text"  required #numberOfAlbums="ngModel" class="form-control"
+        [class.is-invalid]="numberOfAlbums.invalid && numberOfAlbums.touched" name="numberOfAlbums" [(ngModel)]="newArtist.linkToImage" >
+        <small class="text-danger"  [class.d-none]="numberOfAlbums.valid || numberOfAlbums.untouched" >Pocet albumov umelca je povinný</small>
+    </div>
+
+    <div class="text-center">
+        <button [disabled]="addArtistForm.form.invalid" class="btn btn-primary" type="submit" >Registruj</button>
+    </div>
+</form>
+</div>
+<div class="col-sm"></div>
+</div>

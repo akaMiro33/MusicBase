@@ -1,0 +1,5 @@
+<div class="container">
+  <div *ngFor="let artistBasicView of (artistBasicViews$ | async); index as i; odd as isOdd" >
+    <app-artist-item  [artistBasicView]="artistBasicView" (deleteArtistEvent)="deleteArtist($event)" ></app-artist-item>
+  </div>
+</div>

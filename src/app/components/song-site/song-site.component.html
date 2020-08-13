@@ -1,0 +1,11 @@
+<div class="starter-template">
+    <h1>Artist Base</h1>
+      <p class="lead">Tu sa dozvieš mnoho o konkretnych albumov
+          <br> Od Jacksna cez Beatles po Metallicu a Separa.
+        </p>
+</div>
+<div class="container">
+   <div *ngFor="let piesen of (songBasicViews$ | async); index as i; odd as isOdd" >
+    <app-song-item [songBasicView]="piesen"  (deleteSongEvent)="deleteSong($event)"  ></app-song-item>
+  </div>
+</div>

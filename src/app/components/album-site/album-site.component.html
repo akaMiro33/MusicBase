@@ -1,0 +1,19 @@
+<div class="starter-template">
+    <h1>Album Base</h1>
+      <p class="lead">Tu sa dozvieš mnoho o konkretnych albumov
+          <br> Od Jacksna cez Beatles po Metallicu a Separa.
+        </p>
+
+</div>
+<div class="container">
+
+     <div *ngFor="let album of createRange(); index as i" class="row mb-2" >
+        <div class="col-md-6">
+            <app-album-item *ngIf="albumBasicViews[0 + 2*i]"  [albumBasicViews]="albumBasicViews[0 + 2*i]"  (deleteAlbumEvent)="deleteAlbum($event)" ></app-album-item>
+        </div>
+        <div class="col-md-6">
+            <app-album-item  *ngIf="albumBasicViews[1 + 2*i]"  [albumBasicViews]="albumBasicViews[1 + 2*i]" (deleteAlbumEvent)="deleteAlbum($event)" ></app-album-item>
+        </div>
+
+    </div>
+</div>
